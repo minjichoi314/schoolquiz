@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8df" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>해솔력테스트</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="sparkle s1">✦</div><div class="sparkle s2">✧</div><div class="sparkle s3">✦</div>
+      <h1 aria-label="해솔력테스트">
+        <span class="bubble b1">해</span><span class="bubble b2">솔</span><span class="bubble b3">력</span><span class="bubble b4">테</span><span class="bubble b5">스</span><span class="bubble b6">트</span>
+      </h1>
+      <p>레버를 당겨 문제를 돌리고, 하트를 눌러 멈춰보세요!</p>
+    </header>
+
+    <section class="machine" aria-label="해솔력테스트 빠칭코 퀴즈 머신">
+      <div class="crown" aria-hidden="true">♛</div>
+      <div class="machine-top">
+        <div class="display-window" aria-live="polite">
+          <span id="displayText">READY</span>
+        </div>
+      </div>
+
+      <div class="reel-frame">
+        <div class="reel-window" id="reelWindow" aria-live="polite">
+          <div class="reel" id="reel1"><span>Q</span><b>01</b></div>
+          <div class="reel" id="reel2"><span>Q</span><b>18</b></div>
+          <div class="reel" id="reel3"><span>Q</span><b>37</b></div>
+        </div>
+      </div>
+
+      <div class="lamp-row" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+
+      <div class="heart-panel">
+        <span class="wing left">❯</span>
+        <button id="heartButton" class="heart-button" type="button" disabled aria-label="문제 멈추기">
+          <span>♥</span>
+          <small>STOP</small>
+        </button>
+        <span class="wing right">❮</span>
+      </div>
+
+      <div class="lever-wrap" id="leverWrap">
+        <div class="lever-track"></div>
+        <button id="lever" class="lever" type="button" aria-label="레버 당기기">
+          <span class="lever-ball"></span>
+          <span class="lever-stick"></span>
+        </button>
+        <div class="lever-label">PULL</div>
+      </div>
+
+      <div class="machine-feet" aria-hidden="true"><i></i><i></i></div>
+    </section>
+
+    <p class="instruction" id="instruction">오른쪽 레버를 아래로 당기거나 눌러 시작하세요.</p>
+  </main>
+
+  <div class="quiz-layer" id="quizLayer" hidden>
+    <section class="quiz-card" role="dialog" aria-modal="true" aria-labelledby="quizQuestion">
+      <div class="quiz-badge" id="quizNumber">QUIZ 01</div>
+      <h2 id="quizQuestion"></h2>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+      <button id="nextButton" class="next-button" type="button" hidden>다시 돌리기</button>
+    </section>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
