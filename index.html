@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8df" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>해솔력테스트</title>
+  <link rel="stylesheet" href="./style-v13.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="sparkle s1">✦</div><div class="sparkle s2">✧</div><div class="sparkle s3">✦</div>
+      <h1 aria-label="해솔력테스트">
+        <span class="bubble b1">해</span><span class="bubble b2">솔</span><span class="bubble b3">력</span><span class="bubble b4">테</span><span class="bubble b5">스</span><span class="bubble b6">트</span>
+      </h1>
+      <p>레버를 당기고 하트를 눌러 오늘의 문제를 골라보세요!</p>
+    </header>
+
+    <section class="machine" aria-label="해솔력테스트 빠칭코 퀴즈 머신">
+      <div class="crown" aria-hidden="true">♛</div>
+
+      <div class="machine-top">
+        <div class="display-window" aria-live="polite">
+          <span id="displayText">READY</span>
+        </div>
+      </div>
+
+      <div class="reel-frame">
+        <div class="single-reel-window" id="reelWindow" aria-live="polite">
+          <div class="single-reel reel" id="reel1">
+            <span>Q</span>
+            <b>01</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="heart-lights" aria-hidden="true">
+        <span class="mini-heart mh-green">♥</span>
+        <span class="mini-heart mh-yellow">♥</span>
+        <span class="mini-heart mh-pink">♥</span>
+        <span class="mini-heart mh-purple">♥</span>
+      </div>
+
+      <div class="heart-panel">
+        <div class="stop-square">
+          <button id="heartButton" class="heart-button" type="button" disabled aria-label="문제 멈추기">
+            <svg class="heart-svg" viewBox="0 0 160 140" aria-hidden="true">
+              <defs>
+                <linearGradient id="heartFill" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffb7d8"/>
+                  <stop offset="48%" stop-color="#f58fc2"/>
+                  <stop offset="100%" stop-color="#de6aa7"/>
+                </linearGradient>
+                <linearGradient id="heartGloss" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity=".72"/>
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="heart-main" d="M80 126 C68 113 27 84 20 54 C14 28 32 12 54 12 C68 12 77 19 80 28 C85 18 95 12 108 12 C131 12 148 29 142 55 C136 84 96 113 80 126 Z"/>
+              <path class="heart-gloss" d="M43 29 C55 19 70 20 76 31 C66 29 55 33 47 42 C43 47 39 47 36 42 C33 37 36 33 43 29 Z"/>
+            </svg>
+            <small>STOP</small>
+          </button>
+        </div>
+      </div>
+
+      <div class="lever-wrap" id="leverWrap">
+        <div class="lever-track"></div>
+        <button id="lever" class="lever" type="button" aria-label="레버 당기기">
+          <span class="lever-ball"></span>
+          <span class="lever-stick"></span>
+        </button>
+      </div>
+
+      <div class="machine-feet" aria-hidden="true"><i></i><i></i></div>
+    </section>
+  </main>
+
+  <div class="quiz-layer" id="quizLayer" hidden>
+    <section class="quiz-card" role="dialog" aria-modal="true" aria-labelledby="quizQuestion">
+      <div class="quiz-badge" id="quizNumber">QUIZ 01</div>
+      <h2 id="quizQuestion"></h2>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+      <button id="nextButton" class="next-button" type="button" hidden>다시 돌리기</button>
+    </section>
+  </div>
+
+  <script src="./app-v13.js" defer></script>
+</body>
+</html>
